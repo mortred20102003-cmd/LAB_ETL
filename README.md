@@ -1,16 +1,23 @@
 # Data Warehousing & ETL Pipeline (ITD100)
 
-This repository contains the ETL pipelines and Star Schema designs for the ITD100 final project.
+This repository contains the ETL pipelines, Star Schema designs, and automated PDF reporting scripts for the ITD100 final project. 
+
+## Datasets Processed
+1. **Fisheries Landings** (Mock messy CSV) - Lab 1-3
+2. **Cars Dataset 2025** (Kaggle) 
+3. **Date Fruit Dataset** (Kaggle)
+4. **Student Stress Level** (Kaggle)
+5. **Student Stress Survey** (Kaggle)
 
 ## Project Structure
-- `data/`: Contains raw and cleaned datasets.
-- `scripts/`: Python scripts for data cleaning (`clean_cars.py`, `clean_dates.py`) and automated PDF report generation (`generate_report.py`).
-- `sql/`: PostgreSQL scripts for creating the Star Schemas and loading data.
-- `reports/`: Final Data Quality PDF reports for Fisheries, Cars, and Date Fruit datasets.
+- `data/`: Contains raw and cleaned datasets (CSV and Excel).
+- `scripts/`: Python scripts for data cleaning and automated PDF report generation.
+- `sql/`: PostgreSQL scripts for creating Star Schemas and loading data.
+- `reports/`: Final Data Quality PDF reports and automated chart reports.
 
-## How to Run
+## How to Run (General Workflow)
 1. Ensure PostgreSQL is running.
 2. Activate the virtual environment: `source .venv/bin/activate`
-3. Run the Python cleaning scripts: `python3 scripts/clean_cars.py`
-4. Run the SQL scripts in `psql`.
-5. Generate the report: `python3 scripts/generate_report.py`
+3. Run the Python cleaning scripts (e.g., `python3 scripts/clean_cars.py`).
+4. Run the SQL scripts in `psql` to create schemas and load data.
+5. Generate the automated PDF report: `python3 scripts/generate_report.py`

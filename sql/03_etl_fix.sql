@@ -27,6 +27,7 @@ SELECT
     c.value_php::NUMERIC
 FROM Cleaned c
 JOIN dw.dim_port p ON c.port_name = p.port_name
-JOIN dw.dim_vessel v ON c.vessel_name = v.vessel_name AND v.is_current = TRUE
+-- THIS IS THE UPGRADE: Uses the SCD Type 2 date ranges!
+JOIN dw.dim_vessel v ON c.vessel_name = v.vessel_name AND c.landing_date::date BETWEEN v.valid_from AND v.valid_to
 JOIN dw.dim_species s ON c.clean_species = s.species_name
 WHERE c.rn = 1;
